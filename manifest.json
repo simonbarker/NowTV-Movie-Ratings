@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "NowTV Movie Ratings",
+  "description": "Grabs IMDB movie ratings and adds them to NowTV's listing pages",
+  "version": "1.0.2",
+  "manifest_version": 2,
+  "icons": { "128" : "icon128.png" },
+  "permissions": [
+    "http://www.omdbapi.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.nowtv.com/movies*","http://www.nowtv.com/watch-movies*"],
+      "css": ["style.css"],
+      "js": ["jquery.js", "app.js"]
+    }
+  ],
+  "web_accessible_resources": ["app.js", "ajax-loader.gif"]
+}
