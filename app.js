@@ -88,15 +88,10 @@ Rating provided through the Open Movie Database API - http://www.omdbapi.com.
   }
 
   function getRating(data){
-    if(data.Response !== "False"){
-      ratingText = $('<span>', {class: "itempropIMDBrating", text: data.imdbRating});
-    }
-    else{
-      ratingText = $('<span>', {class: "itempropIMDBrating", text: 'Not Found'});
-    }
-    return ratingText;
+    ratingText = (data.Response !== "False") 
+      ? data.imdbRating : "Not Found";
+    return '<span class="itempropIMDBrating">'+ratingText+'</span>';
   }
 
 } (jQuery));
-
 
